@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Kursovay.Models
 {
+    /// <summary>
+    ///  сущность Занятия
+    /// </summary>
     internal class Lesson
     {
         public int Id { get; set; }

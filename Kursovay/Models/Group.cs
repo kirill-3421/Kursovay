@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kursovay.Models
 {
+    /// <summary>
+    /// сущность Группы
+    /// </summary>
     internal class Group
     {
         public int Id { get; set; }

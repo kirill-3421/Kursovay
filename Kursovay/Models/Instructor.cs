@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kursovay.Models
 {
+    /// <summary>
+    /// сущность Преподавателя
+    /// </summary>
     internal class Instructor
     {
         public int Id { get; set; }

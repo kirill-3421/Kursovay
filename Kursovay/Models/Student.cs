@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kursovay.Models
 {
+    /// <summary>
+    /// сущность Ученика
+    /// </summary>
     internal class Student
     {
         public int Id { get; set; }
@@ -16,7 +19,7 @@ namespace Kursovay.Models
         public DateTime EnrollmentDate { get; set; }
         public string Status { get; set; } = "Обучается"; // обучается, выпущен, отчислен
 
-        public int GroipId { get; set; }
+        public int GroupId { get; set; }
         public Group? Group { get; set; }
 
         public List<Exam> Exams { get; set; } = new();

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kursovay.Models
 {
+    /// <summary>
+    /// сущность Автомобиля
+    /// </summary>
     internal class Car
     {
         public int Id { get; set; }
