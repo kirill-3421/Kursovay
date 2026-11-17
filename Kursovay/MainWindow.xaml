@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
-    <Grid>
+        Title="Автошкола - Вход" Height="450" Width="450" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <TabControl>
+            <TabItem Header="Вход" FontSize="16">
+                <StackPanel VerticalAlignment="Center" Margin="20">
+                    <TextBlock Text="Логин:" FontSize="14" Margin="0,0,0,5"/>
+                    <TextBox x:Name="TxtLogin" FontSize="14" Padding="5" Margin="0,0,0,15"/>
 
+                    <TextBlock Text="Пароль:" FontSize="14" Margin="0,0,0,5"/>
+                    <PasswordBox x:Name="TxtPassword" FontSize="14" Padding="5" Margin="0,0,0,25"/>
+
+                    <Button Content="Войти" Click="BtnLogin_Click" Height="40" Background="LightBlue" FontSize="16" FontWeight="Bold" Cursor="Hand"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Регистрация" FontSize="16" HorizontalAlignment="Right">
+                <StackPanel VerticalAlignment="Center" Margin="20">
+                    <TextBlock Text="Логин:" FontSize="14" Margin="0,0,0,5"/>
+                    <TextBox x:Name="RegLogin" FontSize="14" Padding="5" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Пароль:" FontSize="14" Margin="0,0,0,5"/>
+                    <PasswordBox x:Name="RegPassword" FontSize="14" Padding="5" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Повторите пароль:" FontSize="14" Margin="0,0,0,5"/>
+                    <PasswordBox x:Name="RegPasswordConfirm" FontSize="14" Padding="5" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Роль:" FontSize="14" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="RegRole" SelectedIndex="0" Padding="5" Margin="0,0,0,15">
+                        <ComboBoxItem Content="Student"/>
+                        <ComboBoxItem Content="Teacher"/>
+                    </ComboBox>
+
+                    <Button Content="Зарегистрироваться" Click="BtnRegister_Click" Height="40" Background="LightGreen" FontSize="14" FontWeight="Bold" Cursor="Hand"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

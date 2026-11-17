@@ -17,6 +17,7 @@ namespace Kursovay
         public DbSet<Car> Cars { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
         public DbSet<Exam> Exams { get; set; }
+        public DbSet<User> Users { get; set; }
 
         /// <summary>
         /// подключение к БД
@@ -69,7 +70,7 @@ namespace Kursovay
                 .HasForeignKey(l => l.InstructorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Связь: Студент (1) -> Экзамены (Много)
+            // связь:студент - экзамены
             modelBuilder.Entity<Exam>()
                 .HasOne(e => e.Student)
                 .WithMany(s => s.Exams)
