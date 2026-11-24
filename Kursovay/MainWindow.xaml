@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay"
         mc:Ignorable="d"
-        Title="Автошкола - Вход" Height="450" Width="450" 
+        Title="Автошкола - Вход" Height="470" Width="450" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="20">
         <TabControl>
@@ -38,7 +38,7 @@
                         <ComboBoxItem Content="Teacher"/>
                     </ComboBox>
 
-                    <Button Content="Зарегистрироваться" Click="BtnRegister_Click" Height="40" Background="LightGreen" FontSize="14" FontWeight="Bold" Cursor="Hand"/>
+                    <Button Content="Зарегистрироваться" Click="BtnRegister_Click" Height="40" Background="#c5e2c1" FontSize="14" FontWeight="Bold" Cursor="Hand"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
