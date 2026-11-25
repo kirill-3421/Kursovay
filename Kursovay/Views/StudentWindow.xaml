@@ -5,8 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay.Views"
         mc:Ignorable="d"
-        Title="StudentWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Личный кабинет ученика" Height="550" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5" FontFamily="Segoe UI">
+
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Выйти" Click="BtnLogout_Click" 
+                    Width="100" Height="30" Background="LightCoral" FontWeight="Bold" BorderBrush="#BDBDBD"/>
+
+            <TextBlock x:Name="TxtWelcome" Text="Личный кабинет" 
+                       Grid.Column="1" FontSize="20" FontWeight="SemiBold" 
+                       Foreground="#333333" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Border Grid.Row="1" BorderBrush="#CCCCCC" BorderThickness="1" Background="White" 
+                Padding="15" Margin="0,0,0,15" CornerRadius="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Ваша группа:" FontWeight="SemiBold" Foreground="#666666" Margin="0,0,10,5"/>
+                <TextBlock x:Name="TxtGroupInfo" Grid.Column="1" FontSize="14" Foreground="#222222" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Преподаватель:" FontWeight="SemiBold" Foreground="#666666" Grid.Row="1" Margin="0,0,10,0"/>
+                <TextBlock x:Name="TxtInstructorInfo" Grid.Row="1" Grid.Column="1" FontSize="14" Foreground="#222222"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" BorderBrush="#CCCCCC" BorderThickness="1" Background="White" CornerRadius="4">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Мои оценки" FontSize="16" FontWeight="SemiBold" 
+                           Foreground="#333333" Margin="15,15,15,10"/>
+
+                <DataGrid x:Name="GridExams" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" 
+                          Background="White" BorderThickness="1,1,0,0" BorderBrush="#EEEEEE"
+                          GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#EEEEEE"
+                          RowHeight="30" ColumnHeaderHeight="32">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F9F9F9"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Padding" Value="10,0"/>
+                            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=\{0:dd.MM.yyyy\}}" Width="120"/>
+                        <DataGridTextColumn Header="Тип экзамена" Binding="{Binding Type}" Width="150"/>
+                        <DataGridTextColumn Header="Оценка" Binding="{Binding Grade}" Width="100"/>
+                        <DataGridTextColumn Header="Преподаватель" Binding="{Binding Instructor.FullName}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

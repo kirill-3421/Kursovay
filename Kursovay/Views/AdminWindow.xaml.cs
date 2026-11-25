@@ -175,5 +175,15 @@ namespace Kursovay.Views
 
             MessageBox.Show(report, "Отчет", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
+        /// <summary>
+        /// закрывает окно администратора и возвращает на окно авторизации
+        /// </summary>
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow loginWindow = new MainWindow();
+            loginWindow.Show();
+            this.Close();
+        }
     }
 }

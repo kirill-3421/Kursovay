@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay.Views"
         mc:Ignorable="d"
-        Title="TeacherWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Панель Преподавателя" Height="650" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+            <Button Content="Выйти" Click="BtnLogout_Click" 
+                    Padding="10,5" Margin="0,0,20,0" Background="LightCoral" 
+                    FontWeight="Bold" Cursor="Hand"/>
+            <TextBlock x:Name="TxtWelcome" Text="Мое расписание" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <GroupBox Grid.Row="1" Header="Занятия" FontWeight="Bold" Padding="5" Margin="0,0,0,15">
+            <DataGrid x:Name="GridLessons" AutoGenerateColumns="False" IsReadOnly="True" 
+                      AlternatingRowBackground="WhiteSmoke" RowHeight="25">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=\{0:dd.MM.yyyy\}}" Width="100"/>
+                    <DataGridTextColumn Header="Время" Binding="{Binding Time}" Width="80"/>
+                    <DataGridTextColumn Header="Тема" Binding="{Binding Topic}" Width="*"/>
+                    <DataGridTextColumn Header="Группа" Binding="{Binding Group.GroupNumber}" Width="120"/>
+                    <DataGridTextColumn Header="Автомобиль" Binding="{Binding Car.Model}" Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Header="Выставить оценку за экзамен" FontWeight="Bold" Padding="15">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Студент:" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Normal"/>
+                <ComboBox x:Name="CmbStudent" DisplayMemberPath="FullName" Width="220" Margin="0,0,20,0" Padding="5"/>
+
+                <TextBlock Text="Тип:" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Normal"/>
+                <ComboBox x:Name="CmbExamType" Width="120" Margin="0,0,20,0" SelectedIndex="0" Padding="5">
+                    <ComboBoxItem Content="Теория"/>
+                    <ComboBoxItem Content="Практика"/>
+                </ComboBox>
+
+                <TextBlock Text="Оценка:" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Normal"/>
+                <TextBox x:Name="TxtGrade" Width="50" Margin="0,0,20,0" Padding="5" FontSize="14"/>
+
+                <Button Content="Сохранить" Click="BtnAddGrade_Click" Background="#c5e2c1" 
+                        Padding="15,5" FontWeight="Bold" Cursor="Hand"/>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>
