@@ -25,5 +25,10 @@ namespace Kursovay.Views
             _studentId = studentId;
 
         }
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
