@@ -10,7 +10,7 @@ namespace Kursovay.Models
     /// <summary>
     /// сущность Программы
     /// </summary>
-    internal class TrainingProgram
+    public class TrainingProgram
     {
         public int Id { get; set; }
         public string ProgramName { get; set; }

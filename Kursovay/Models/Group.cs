@@ -9,7 +9,7 @@ namespace Kursovay.Models
     /// <summary>
     /// сущность Группы
     /// </summary>
-    internal class Group
+    public class Group
     {
         public int Id { get; set; }
         public string GroupNumber { get; set; } = string.Empty;

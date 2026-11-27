@@ -185,5 +185,10 @@ namespace Kursovay.Views
             loginWindow.Show();
             this.Close();
         }
+
+        private void GridStudents_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
     }
 }

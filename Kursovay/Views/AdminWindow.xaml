@@ -63,7 +63,8 @@
             </StackPanel>
 
             <DataGrid x:Name="GridStudents" Grid.Column="1" AutoGenerateColumns="False" 
-                      IsReadOnly="True" AlternatingRowBackground="WhiteSmoke" RowHeight="25">
+                      IsReadOnly="True" AlternatingRowBackground="WhiteSmoke" RowHeight="25"
+                      MouseDoubleClick="GridStudents_MouseDoubleClick">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
                     <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}" Width="*"/>

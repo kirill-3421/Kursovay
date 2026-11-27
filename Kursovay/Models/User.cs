@@ -9,7 +9,7 @@ namespace Kursovay.Models
     /// <summary>
     /// сущность Пользователя
     /// </summary>
-    internal class User
+    public class User
     {
         public int Id { get; set; }
         public string Login { get; set; } = string.Empty;

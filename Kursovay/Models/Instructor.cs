@@ -9,7 +9,7 @@ namespace Kursovay.Models
     /// <summary>
     /// сущность Преподавателя
     /// </summary>
-    internal class Instructor
+    public class Instructor
     {
         public int Id { get; set; }
         public string FullName { get; set; } = string.Empty;
